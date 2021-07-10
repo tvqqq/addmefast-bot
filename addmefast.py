@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
-from secrets import *
+import random
 
 
 class Bot():
@@ -36,7 +36,7 @@ class Bot():
             '//*[@id="login_password_step_element"]/button')
         login_btn.click()
 
-        sleep(5)
+        sleep(10)
 
         self.driver.get('https://addmefast.com')
 
@@ -82,6 +82,7 @@ class Bot():
 
             btn_fb_like_page = self.driver.find_element_by_xpath(
                 '//div[@aria-label="nút thích"]')
+            sleep(random.randint(3, 9)) # A human behavior
             btn_fb_like_page.click()
 
             sleep(2)
